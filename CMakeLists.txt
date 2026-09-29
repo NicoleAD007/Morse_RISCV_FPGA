@@ -97,9 +97,11 @@ set(BOOT_FILE "${CMAKE_CURRENT_SOURCE_DIR}/sw/system/boot.s")
 file(GLOB_RECURSE C_FILES 
     "${CMAKE_CURRENT_SOURCE_DIR}/sw/*.c"
 )
-
+file(GLOB_RECURSE ASM_FILES
+    "${CMAKE_CURRENT_SOURCE_DIR}/sw/*.S"
+)
 # 3. Combine them, guaranteeing boot.s is the first argument passed to GCC
-set(SW_SRC_FILES ${BOOT_FILE} ${C_FILES})
+set(SW_SRC_FILES ${BOOT_FILE} ${C_FILES} ${ASM_FILES})
 
 # Path for headers .h
 set(INCLUDE_FLAGS 
